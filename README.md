@@ -3,14 +3,7 @@
 cmsrel CMSSW_8_0_25 #for 2016 analysis
 cd CMSSW_8_0_25/src/
 cmsenv
-#git cms-addpkg RecoMET/METPUSubtraction
-#git cms-addpkg DataFormats/METReco
-#git cms-merge-topic -u rfriese:mvamet80
-#mkdir RecoMET/METPUSubtraction/data
-#cd RecoMET/METPUSubtraction/data
-#wget https://github.com/rfriese/cmssw/raw/MVAMET2_beta_0.6/RecoMET/METPUSubtraction/data/weightfile.root
-#cd $CMSSW_BASE/src
-git clone --recursive https://github.com/truggles/SubmitSVFit.git
+git clone -b svFitStandalone https://github.com/maravin/SubmitSVFit.git
 cd SubmitSVFit
 source recipe.sh
 scram b -j 8
@@ -21,11 +14,12 @@ You can find them in ROOT/bin/SVFitStandAlone... with the names of their executa
 defined ROOT/bin/BuildFile.xml.
 
 Most current on being worked on: 
-ROOT/bin/SVFitStandAloneFSA.cc
+ROOT/bin/SVFitStandAloneFSATauDM.cc
+ROOT/bin/SVFitStandAloneFSAZH.cc
 
 To run in interactive mode for example:
 ```
-SVFitStandAloneFSA inputFile=coolInputFile.root newOutputFile=1 newFile=tmpOut.root doES=1
+SVFitStandAloneFSATauDM inputFile=coolInputFile.root newOutputFile=1 newFile=tmpOut.root doES=1
 ```
 
  - inputFile = obvious
