@@ -735,6 +735,7 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser, char TreeToUse[]
       t->SetBranchAddress("metcov10",&pfCovMatrix10);
       t->SetBranchAddress("metcov11",&pfCovMatrix11);
       // Met Unc
+      /*
       if ( channel ==  "tt" ) {
         t->SetBranchAddress("type1_pfMet_shiftedPt_UnclusteredEnUp",&uncMetPtUp);
         t->SetBranchAddress("type1_pfMet_shiftedPt_UnclusteredEnDown",&uncMetPtDown);
@@ -755,6 +756,17 @@ void readdir(TDirectory *dir, optutl::CommandLineParser parser, char TreeToUse[]
         t->SetBranchAddress("metphi_JESUp", &clusteredMetPhiUp);
         t->SetBranchAddress("metphi_JESDown", &clusteredMetPhiDown);
       }
+      */
+      t->SetBranchAddress("met_UESUp", &uncMetPtUp);
+      t->SetBranchAddress("met_UESDown", &uncMetPtDown);
+      t->SetBranchAddress("metphi_UESUp", &uncMetPhiUp);
+      t->SetBranchAddress("metphi_UESDown", &uncMetPhiDown);
+      
+      t->SetBranchAddress("met_JESUp", &clusteredMetPtUp);
+      t->SetBranchAddress("met_JESDown", &clusteredMetPtDown);
+      t->SetBranchAddress("metphi_JESUp", &clusteredMetPhiUp);
+      t->SetBranchAddress("metphi_JESDown", &clusteredMetPhiDown);
+      
       
       printf("Found tree -> weighting\n");
     

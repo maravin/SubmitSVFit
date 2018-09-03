@@ -19,7 +19,7 @@ the code to suit your needs).
 
 To run in interactive mode for example:
 ```
-SVFitStandAloneFSATauDM inputFile=coolInputFile.root newOutputFile=1 newFile=tmpOut.root doES=1 metType=-1 
+SVFitStandAloneFSATauDM inputFile=coolInputFile.root newFile=tmpOut.root doES=1 isWJets=0 metType=-1 
 ```
 
  - inputFile = obvious
