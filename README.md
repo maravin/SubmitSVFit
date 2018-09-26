@@ -19,7 +19,7 @@ the code to suit your needs).
 
 To run in interactive mode for example:
 ```
-SVFitStandAloneFSATauDM inputFile=coolInputFile.root newOutputFile=1 newFile=tmpOut.root doES=1 metType=-1 recoilType=0
+SVFitStandAloneFSATauDM inputFile=coolInputFile.root newFile=tmpOut.root doES=1 isWJets=0 metType=-1 
 ```
 
  - inputFile = obvious
@@ -30,10 +30,6 @@ SVFitStandAloneFSATauDM inputFile=coolInputFile.root newOutputFile=1 newFile=tmp
  - doES = apply energy scale adjustments providing nominal, shift UP and shift DOWN values of svFit
    - 0 = default, no shift
    - 1 = apply shifts
- - recoilType = type of recoile correction based on generator, MadGraph or amc@nlo
-   - 0 = no recoil corrections (for all non-DYJets/WJets/Higgs samples)
-   - 1 = amc@nlo recoil corrections
-   - 2 = MadGraph recoil corrections
  - isWJets = this shifts the number of jets used in recoil corrections, it is critical for
 WJets samples because we clear our jets to preven overlapping with out leptons, but
 with WJets one of the leptons is a jet
@@ -46,7 +42,7 @@ with WJets one of the leptons is a jet
 To submit jobs to condor:
 ```
 cd test
-python svFitSubmitter.py -dr -sd directoryOfCoolFiles -es=1 -r=2 -iswj=0 -mt=-1 --jobName svFitForWin
+python svFitSubmitter.py -dr -sd directoryOfCoolFiles -es=1 -iswj=0 -mt=-1 --jobName svFitForWin
 ```
 
  - -dr = dryRun and outputs a command for you to run
@@ -54,7 +50,6 @@ python svFitSubmitter.py -dr -sd directoryOfCoolFiles -es=1 -r=2 -iswj=0 -mt=-1 
        you must have your files in a /hdfs directory.
  - -es = apply energy scale, see above
  - --jobName = applys a job name to append to your file names and output directory structure
- - -r = recoileType
  - -iswj = isWJets
  - -mt = metType
 
