@@ -15,17 +15,14 @@ ROOT/bin/SVFitStandAloneFSATauDM.cc
 The code strongly depends on the input naming, you need to make sure your naming is correct,
 or expect segmentation faults. There is a boolean flag tylerCode that is set by default to true
 that will take input from Tyler Ruggles ntuples (set it to false to use Cecile ntuples, or modify
-the code to suit your needs).
+the code to suit your needs). This is already taken care of if you are using ROOT/bin/SVFitStandAloneFSATauDM.cc
 
 To run in interactive mode for example:
 ```
-SVFitStandAloneFSATauDM inputFile=coolInputFile.root newFile=tmpOut.root doES=1 isWJets=0 metType=-1 
+SVFitStandAloneFSATauDM inputFile=coolInputFile.root newFile=tmpOut.root doES=1 metType=-1
 ```
 
  - inputFile = obvious
- - newOutputFile = 0/1
-   - 0 = update input file with svFit vars
-   - 1 = output new file with original TTree and new svFit vars
  - newFile = name of output file, default is newFile.root if none specified
  - doES = apply energy scale adjustments providing nominal, shift UP and shift DOWN values of svFit
    - 0 = default, no shift
